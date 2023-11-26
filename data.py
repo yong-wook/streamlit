@@ -10,7 +10,7 @@ import os
 
 
 def main():
-    st.header('디씨검색으로 키워드를 설정합니ㅏ.')
+    st.header('디씨검색으로 키워드를 파악합니다.')
     date = st.text_input('키워드를 입력해주세요. ex)넥슨',"넥슨")
     news_url = 'https://search.dcinside.com/combine/q/{}'.format(date)
 
