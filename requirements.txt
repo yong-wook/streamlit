@@ -1,6 +1,6 @@
 requests
 bs4
-matplotlibl
+matplotlib
 konlpy
 wordcloud
 nltk
