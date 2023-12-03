@@ -1,7 +1,5 @@
-requests
-bs4
-matplotlib
-konlpy
-wordcloud
-nltk
 streamlit
+streamlit_authenticator
+parhlib
+pickle
+webbrowser
