@@ -5,7 +5,7 @@ if "auth_login" not in st.session_state:
    st.session_state["auth_login"] = None 
 
 if st.session_state["auth_login"] != "로그인 중":
-    webbrowser.open("https://usewookstest.streamlit.app/")
+    webbrowser.get("https://usewookstest.streamlit.app/")
     
 
 st.header("데이터 시각화 연습용")
