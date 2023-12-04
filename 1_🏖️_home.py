@@ -21,7 +21,7 @@ for un, name, pw in zip(name, username, hashed_password):
         credentials["usernames"].update({un:user_dict})
 
 
-auth = sa.Authenticate(credentials, "myfirstcookie", "adfsdf", cookie_expiry_days=30)
+auth = sa.Authenticate(credentials, "myfirstcookie", "adfsdf", cookie_expiry_days=0)
 name, auth_status, username = auth.login("Login","main")
 
 if auth_status == False:
