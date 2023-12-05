@@ -2,12 +2,31 @@ import streamlit as st
 import streamlit_authenticator as sa
 from pathlib import Path
 import pickle
+from google.oauth2 import id_token
+from google.auth.transport import requests
 
 st.set_page_config (
     page_title="Use Wook`s Paradise",
     page_icon="👍"
 )
+#구글 인증
+st.subheader("구글 인증")
+client_id = "1038659935534-bkovc6fmbfolpavhibbrn8a2pd5g07rk.apps.googleusercontent.com"
+token = st.text_input("Enter your Google ID token", type="password")
+if st.button("Authenticate"):
+        try:
+            idinfo = id_token.verify_oauth2_token(token, requests.Request(), client_id)
+            if idinfo['aud'] != client_id:
+                raise ValueError("Invalid client ID")
+            st.success(f"Authentication successful: {idinfo['name']}")
+            st.session_state["auth_login"] = "로그인 중"
+            # Continue with the rest of your app logic here
+        except ValueError as e:
+            st.error("Authentication failed")
+            st.error(e)
 ################ 유저 인증
+
+'''
 username =["이용욱","김성은"]
 name = ["zealot","nanjangi"]
 
@@ -38,3 +57,4 @@ if auth_status:
     st.session_state["auth_login"] = "로그인 중"
     st.sidebar.success("로그인 성공")
     auth.logout('logout','sidebar')
+'''
