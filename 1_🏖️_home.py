@@ -9,6 +9,7 @@ st.set_page_config (
     page_title="Use Wook`s Paradise",
     page_icon="👍"
 )
+'''
 #구글 인증
 st.subheader("구글 인증")
 client_id = "1038659935534-bkovc6fmbfolpavhibbrn8a2pd5g07rk.apps.googleusercontent.com"
@@ -57,4 +58,4 @@ if auth_status:
     st.session_state["auth_login"] = "로그인 중"
     st.sidebar.success("로그인 성공")
     auth.logout('logout','sidebar')
-'''
+
